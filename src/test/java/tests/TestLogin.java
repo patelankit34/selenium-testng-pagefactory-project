@@ -29,7 +29,8 @@ public class TestLogin extends CommonSteps {
 	@Parameters({"loginEmail", "loginPassword"})
 	private void verifyValidLogin(String loginEmail, String loginPassword)
 	{
-		System.out.println("Stash example");
+		System.out.println("Stash-2 example");
+        System.out.println("Stash-3 example");
 		
 		homePage.openHomePage(super.baseUrl);
 		homePage.login(loginEmail, loginPassword);
