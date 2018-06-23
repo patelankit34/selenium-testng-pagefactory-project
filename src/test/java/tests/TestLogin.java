@@ -24,11 +24,13 @@ public class TestLogin extends CommonSteps {
 		homePage = PageFactory.initElements(super.driver, HomePage.class);
 		userLandingPage = PageFactory.initElements(super.driver, UserLandingPage.class);
 	}
-	
+
 	@Test(description = "Verify login with valid credentials", enabled = true)
 	@Parameters({"loginEmail", "loginPassword"})
 	private void verifyValidLogin(String loginEmail, String loginPassword)
 	{
+		System.out.println("Stash example");
+		
 		homePage.openHomePage(super.baseUrl);
 		homePage.login(loginEmail, loginPassword);
 		String actualText = userLandingPage.getTextFromUserProfileLink();
