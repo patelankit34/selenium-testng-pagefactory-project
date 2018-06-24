@@ -14,10 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-/**
- * @author Jaspal
- *
- */
+
 public class CommonSteps {
 	
 	protected WebDriver driver;

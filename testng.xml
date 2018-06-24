@@ -6,8 +6,8 @@
 	<test name="ChromeTestCases">
 		<parameter name="browser" value="chrome" />
 		<parameter name="baseUrl" value="https://www.facebook.com" />
-		<parameter name="loginEmail" value="jaspal.test2@gmail.com" />
-		<parameter name="loginPassword" value="jaspal123" />
+		<parameter name="loginEmail" value="testdemo6242018@gmail.com" />
+		<parameter name="loginPassword" value="@test1234" />
 		<classes>
 			<class name="tests.TestLogin" />
 		</classes>

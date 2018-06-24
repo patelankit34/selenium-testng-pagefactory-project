@@ -6,10 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Reporter;
 
-/**
- * @author Jaspal
- *
- */
+
 public class HomePage {
 	
     WebDriver driver;

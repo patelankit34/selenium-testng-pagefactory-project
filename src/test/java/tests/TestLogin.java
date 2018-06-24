@@ -10,10 +10,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.UserLandingPage;
 
-/**
- * @author Jaspal
- *
- */
+
 public class TestLogin extends CommonSteps {
 	
 	HomePage homePage;
@@ -29,17 +26,15 @@ public class TestLogin extends CommonSteps {
 	@Parameters({"loginEmail", "loginPassword"})
 	private void verifyValidLogin(String loginEmail, String loginPassword)
 	{
-		System.out.println("Stash-2 example");
-        System.out.println("Stash-3 example");
+		test();
 		
 		homePage.openHomePage(super.baseUrl);
 		homePage.login(loginEmail, loginPassword);
 		String actualText = userLandingPage.getTextFromUserProfileLink();
-		String expectedText = "Jaspal";
+		String expectedText = "Andy";
 		Assert.assertEquals(expectedText, actualText);
 		Reporter.log("Text verified successfully, which is equals to: " + expectedText, true);
 	}
-	
 	@Test(description = "Verify login with valid credentials 2", enabled = true)
 	@Parameters({"loginEmail", "loginPassword"})
 	private void verifyValidLogin2(String loginEmail, String loginPassword)
@@ -47,9 +42,12 @@ public class TestLogin extends CommonSteps {
 		homePage.openHomePage(super.baseUrl);
 		homePage.login(loginEmail, loginPassword);
 		String actualText = userLandingPage.getTextFromUserProfileLink();
-		String expectedText = "Jaspal";
+		String expectedText = "Ankit";
 		Assert.assertEquals(expectedText, actualText);
 		Reporter.log("Text verified successfully, which is equals to: " + expectedText, true);
 	}
-	
+	public void test() {
+		System.out.println("Stash-2 example");
+		System.out.println("Stash-3 example");
+	}
 }
