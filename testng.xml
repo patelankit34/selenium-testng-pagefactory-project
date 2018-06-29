@@ -3,15 +3,32 @@
 <suite name="Suite" parallel="tests">
 
 
-	<test name="ChromeTestCases">
+	<test name="regression">
 		<parameter name="browser" value="chrome" />
 		<parameter name="baseUrl" value="https://www.facebook.com" />
 		<parameter name="loginEmail" value="testdemo6242018@gmail.com" />
 		<parameter name="loginPassword" value="@test1234" />
+		<parameter name="SearchUser" value="Ankit Patel" />
 		<classes>
 			<class name="tests.TestLogin" />
+
 		</classes>
 	</test> <!-- Test -->
 
 
 </suite> <!-- Suite -->
+
+
+
+		<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >-->
+
+<!--<suite name="My Suite" verbose="2"  parallel="tests" thread-count="10">-->
+
+<!--<test name="Some Workflow Tests" parallel="none">-->
+	<!--<classes>-->
+		<!--<class name="com.somepackage.test.MyTests1" priority="1"/>-->
+		<!--<class name="com.somepackage.test.MyTests2" priority="2"/>-->
+	<!--</classes>-->
+<!--</test>-->
+
+<!--</suite>-->

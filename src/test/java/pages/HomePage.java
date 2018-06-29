@@ -14,11 +14,16 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
-	
-	@FindBy(how = How.ID, using="email") WebElement emailTextbox;
-	@FindBy(how = How.ID, using="pass") WebElement passwordTextbox;
-	@FindBy(how = How.ID, using="loginbutton") WebElement loginButton;
-	
+
+//	@FindBy(how = How.ID, using="email") WebElement emailTextbox;
+//	@FindBy(how = How.ID, using="pass") WebElement passwordTextbox;
+//	@FindBy(how = How.ID, using="loginbutton") WebElement loginButton;
+
+
+    @FindBy(css="#email") WebElement emailTextbox;
+    @FindBy(css="#pass") WebElement passwordTextbox;
+    @FindBy(css="#loginbutton") WebElement loginButton;
+
 	public void openHomePage(String baseUrl) {
 		driver.get(baseUrl);
 		Reporter.log("Application opened with baseUrl (" + baseUrl + ")", true);

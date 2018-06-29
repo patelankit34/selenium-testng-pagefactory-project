@@ -9,10 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Reporter;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 
 public class CommonSteps {
@@ -73,5 +70,12 @@ public class CommonSteps {
 	        }
 		}
 	}
-	
+	@AfterSuite
+	public void AfterSuit(){
+		System.out.println("This should run After Suit");
+	}
+	@BeforeSuite
+	public void BeforeSuit(){
+		System.out.println("This should run Before Suit");
+	}
 }

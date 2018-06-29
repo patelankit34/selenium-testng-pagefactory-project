@@ -18,24 +18,28 @@ public class TestLogin extends CommonSteps {
 	
 	@BeforeClass
 	public void beforeThisClass() {
+
 		homePage = PageFactory.initElements(super.driver, HomePage.class);
 		userLandingPage = PageFactory.initElements(super.driver, UserLandingPage.class);
 	}
 
-	@Test(description = "Verify login with valid credentials", enabled = true)
-	@Parameters({"loginEmail", "loginPassword"})
-	private void verifyValidLogin(String loginEmail, String loginPassword)
+	@Test(description = "Verify login with valid credentials")
+	@Parameters({"loginEmail", "loginPassword","SearchUser"})
+	private void verifyValidLogin(String loginEmail, String loginPassword,String name)
 	{
-		test();
-		
+
+
 		homePage.openHomePage(super.baseUrl);
 		homePage.login(loginEmail, loginPassword);
 		String actualText = userLandingPage.getTextFromUserProfileLink();
+		System.out.print("title is: "+userLandingPage.GetTitle());
 		String expectedText = "Andy";
 		Assert.assertEquals(expectedText, actualText);
+
 		Reporter.log("Text verified successfully, which is equals to: " + expectedText, true);
+		userLandingPage.SearchName(name);
 	}
-	@Test(description = "Verify login with valid credentials 2", enabled = true)
+	@Test(description = "Verify login with valid credentials 2",enabled=false)
 	@Parameters({"loginEmail", "loginPassword"})
 	private void verifyValidLogin2(String loginEmail, String loginPassword)
 	{
@@ -46,8 +50,5 @@ public class TestLogin extends CommonSteps {
 		Assert.assertEquals(expectedText, actualText);
 		Reporter.log("Text verified successfully, which is equals to: " + expectedText, true);
 	}
-	public void test() {
-		System.out.println("Stash-2 example");
-		System.out.println("Stash-3 example");
-	}
+
 }
